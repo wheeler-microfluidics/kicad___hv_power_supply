@@ -1,0 +1,43 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 4POS_SW
+D Interrupteur simple
+K switch
+$ENDCMP
+#
+$CMP 74LVC1G86
+D Quad Xor 2 inputs
+K CMOS XOR2
+$ENDCMP
+#
+$CMP CONN_16
+D Symbole general de connexion
+K CONN
+$ENDCMP
+#
+$CMP CONN_18
+D Symbole general de connexion
+K CONN
+$ENDCMP
+#
+$CMP CONN_40
+D Symbole general de connexion
+K CONN
+$ENDCMP
+#
+$CMP CONN_50
+D Symbole general de connexion
+K CONN
+$ENDCMP
+#
+$CMP CONN_60
+D Symbole general de connexion
+K CONN
+$ENDCMP
+#
+$CMP SODIMM144
+D SODIMM144
+K SODIMM 144
+$ENDCMP
+#
+#End Doc Library

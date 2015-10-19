@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP IRF644PBF
+D 20V Vds, 1.2A Id, 175mOhm Rds, Dual N-Channel MOSFET, SC-70-6
+K Dual N-Channel MOSFET Logic Level
+F http://www.fairchildsemi.com/ds/FD/FDG1024NZ.pdf
+$ENDCMP
+#
+#End Doc Library

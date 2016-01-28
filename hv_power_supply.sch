@@ -29,6 +29,7 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:wheelerlab
+LIBS:hv_power_supply-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -186,24 +187,10 @@ F 3 "" H 8600 4550 60  0000 C CNN
 	1    8600 4550
 	1    0    0    -1  
 $EndComp
-Text Notes 9150 4450 0    60   ~ 0
-VOUT
-Text Notes 9150 4800 0    60   ~ 0
-DGND
 Text Notes 2600 3600 0    60   ~ 0
 9-30V
-Text Notes 2600 3500 0    60   ~ 0
-PWR
-Text Notes 2600 3750 0    60   ~ 0
-VCC
-Text Notes 2600 3850 0    60   ~ 0
+Text Notes 2600 4150 0    60   ~ 0
 9-16V
-Text Notes 2550 4400 0    60   ~ 0
-SHDN
-Text Notes 2550 4600 0    60   ~ 0
-DGND
-Text Notes 7950 3100 0    60   ~ 0
-ARDUINO PINS
 Wire Wire Line
 	4350 5350 4350 4700
 Wire Wire Line
@@ -225,11 +212,9 @@ Wire Wire Line
 	3050 4850 3050 4150
 Connection ~ 3550 4150
 Connection ~ 3050 4150
-Wire Wire Line
-	2600 4500 2600 5350
 Connection ~ 3050 5350
 Wire Wire Line
-	2600 5350 8600 5350
+	8600 5350 2600 5350
 Wire Wire Line
 	2600 3600 4200 3600
 Connection ~ 3750 3600
@@ -256,7 +241,7 @@ Connection ~ 6750 3600
 Wire Wire Line
 	8600 3600 8600 4400
 Wire Wire Line
-	8600 5350 8600 4700
+	8600 4700 8600 5350
 Connection ~ 7300 3600
 Connection ~ 7100 5350
 Wire Wire Line
@@ -271,50 +256,11 @@ Wire Wire Line
 	5350 4500 5350 4550
 Wire Wire Line
 	5350 4550 5700 4550
-$Comp
-L CONN_01X02 P1
-U 1 1 560DAB00
-P 2400 3650
-F 0 "P1" H 2400 3800 50  0000 C CNN
-F 1 "J1" V 2500 3650 50  0000 C CNN
-F 2 "Connect:AK300-2" H 2400 3650 60  0001 C CNN
-F 3 "" H 2400 3650 60  0000 C CNN
-	1    2400 3650
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	2600 3700 2600 4150
-$Comp
-L CONN_01X02 P2
-U 1 1 560DADE3
-P 2400 4450
-F 0 "P2" H 2400 4600 50  0000 C CNN
-F 1 "J2" V 2500 4450 50  0000 C CNN
-F 2 "Connect:AK300-2" H 2400 4450 60  0001 C CNN
-F 3 "" H 2400 4450 60  0000 C CNN
-	1    2400 4450
-	-1   0    0    1   
-$EndComp
-$Comp
-L CONN_01X02 P3
-U 1 1 560DAF07
-P 9350 4550
-F 0 "P3" H 9350 4700 50  0000 C CNN
-F 1 "J3" V 9450 4550 50  0000 C CNN
-F 2 "Connect:AK300-2" H 9350 4550 60  0001 C CNN
-F 3 "" H 9350 4550 60  0000 C CNN
-	1    9350 4550
-	1    0    0    1   
-$EndComp
 Wire Wire Line
 	8600 4350 9150 4350
-Wire Wire Line
-	9150 4350 9150 4500
 Connection ~ 8600 4350
 Wire Wire Line
 	8600 4750 9150 4750
-Wire Wire Line
-	9150 4750 9150 4600
 Connection ~ 8600 4750
 $Comp
 L MCP41050 U2
@@ -371,17 +317,6 @@ F 3 "" H 5600 4350 50  0000 L CNN
 	1    5600 4350
 	1    0    0    -1  
 $EndComp
-$Comp
-L CONN_01X03 P4
-U 1 1 56AA736F
-P 8300 3250
-F 0 "P4" H 8300 3450 50  0000 C CNN
-F 1 "CONN_01X03" V 8400 3250 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x03" H 8300 3250 50  0001 C CNN
-F 3 "" H 8300 3250 50  0000 C CNN
-	1    8300 3250
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	8150 4900 8200 4900
 Wire Wire Line
@@ -394,4 +329,53 @@ Wire Wire Line
 	8150 4800 8400 4800
 Wire Wire Line
 	8400 4800 8400 3450
+Text GLabel 2600 3600 0    60   Input ~ 0
+PWR
+Text GLabel 2600 4150 0    60   Input ~ 0
+VCC
+Text GLabel 2600 5350 0    60   Input ~ 0
+DGND
+Text GLabel 2600 4400 0    60   Input ~ 0
+SHDN
+Text GLabel 8200 3450 1    60   Input ~ 0
+CS
+Text GLabel 8300 3450 1    60   Input ~ 0
+SCK
+Text GLabel 8400 3450 1    60   Input ~ 0
+SI
+Text GLabel 9150 4350 2    60   Input ~ 0
+HV
+Text GLabel 9150 4750 2    60   Input ~ 0
+HVGND
+$Comp
+L CONN_01X09 P1
+U 1 1 56AAAEFD
+P 2450 2750
+F 0 "P1" H 2450 3250 50  0000 C CNN
+F 1 "CONN_01X09" V 2550 2750 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x09" H 2450 2750 50  0001 C CNN
+F 3 "" H 2450 2750 50  0000 C CNN
+	1    2450 2750
+	-1   0    0    1   
+$EndComp
+Text GLabel 2650 2350 2    60   Input ~ 0
+PWR
+Text GLabel 2650 2450 2    60   Input ~ 0
+VCC
+Text GLabel 2650 2550 2    60   Input ~ 0
+DGND
+Text GLabel 2650 2650 2    60   Input ~ 0
+SHDN
+Text GLabel 2650 2750 2    60   Input ~ 0
+CS
+Text GLabel 2650 2850 2    60   Input ~ 0
+SCK
+Text GLabel 2650 2950 2    60   Input ~ 0
+SI
+Text GLabel 2650 3150 2    60   Input ~ 0
+HV
+Text GLabel 2650 3050 2    60   Input ~ 0
+HVGND
+Text Notes 2400 2200 0    60   ~ 0
+Pin header
 $EndSCHEMATC

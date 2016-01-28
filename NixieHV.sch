@@ -1,5 +1,4 @@
 EESchema Schematic File Version 2
-LIBS:NixieHV-rescue
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -14,7 +13,6 @@ LIBS:xilinx
 LIBS:microcontrollers
 LIBS:dsp
 LIBS:microchip
-LIBS:max1771_ic
 LIBS:analog_switches
 LIBS:motorola
 LIBS:texas
@@ -30,10 +28,7 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:irf644pbf
-LIBS:mcp4013
 LIBS:wheelerlab
-LIBS:NixieHV-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -207,41 +202,8 @@ Text Notes 2550 4400 0    60   ~ 0
 SHDN
 Text Notes 2550 4600 0    60   ~ 0
 DGND
-Text Notes 7400 3100 0    60   ~ 0
+Text Notes 7950 3100 0    60   ~ 0
 ARDUINO PINS
-$Comp
-L CONN_01X01 P6
-U 1 1 560C2328
-P 8400 3250
-F 0 "P6" H 8400 3350 50  0000 C CNN
-F 1 "CONN_01X01" V 8500 3250 50  0001 C CNN
-F 2 "Wire_Pads:SolderWirePad_single_0-8mmDrill" H 8400 3250 60  0001 C CNN
-F 3 "" H 8400 3250 60  0000 C CNN
-	1    8400 3250
-	0    -1   -1   0   
-$EndComp
-$Comp
-L CONN_01X01 P5
-U 1 1 560C23D1
-P 8000 3250
-F 0 "P5" H 8000 3350 50  0000 C CNN
-F 1 "CONN_01X01" V 8100 3250 50  0001 C CNN
-F 2 "Wire_Pads:SolderWirePad_single_0-8mmDrill" H 8000 3250 60  0001 C CNN
-F 3 "" H 8000 3250 60  0000 C CNN
-	1    8000 3250
-	0    -1   -1   0   
-$EndComp
-$Comp
-L MAX1771_IC U1
-U 1 1 56099E6A
-P 4850 4550
-F 0 "U1" H 4800 4300 60  0000 C CNN
-F 1 "MAX1771_IC" H 4800 4300 60  0000 C CNN
-F 2 "Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm" H 4800 4300 60  0001 C CNN
-F 3 "" H 4800 4300 60  0000 C CNN
-	1    4850 4550
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	4350 5350 4350 4700
 Wire Wire Line
@@ -303,7 +265,6 @@ Wire Wire Line
 	4850 4950 4850 5350
 Wire Wire Line
 	5700 4550 5700 4900
-Connection ~ 5700 4550
 Wire Wire Line
 	5400 4400 5350 4400
 Wire Wire Line
@@ -356,17 +317,6 @@ Wire Wire Line
 	9150 4750 9150 4600
 Connection ~ 8600 4750
 $Comp
-L IRF644PBF-RESCUE-NixieHV Q1
-U 1 1 560DF675
-P 5600 4350
-F 0 "Q1" H 5800 4425 50  0001 L CNN
-F 1 "IRF644PBF" H 5800 4350 50  0000 L CNN
-F 2 "SC-70-6" H 5800 4275 50  0001 L CIN
-F 3 "" H 5600 4350 50  0000 L CNN
-	1    5600 4350
-	1    0    0    -1  
-$EndComp
-$Comp
 L MCP41050 U2
 U 1 1 5612B7DB
 P 7750 4800
@@ -385,17 +335,6 @@ Wire Wire Line
 Connection ~ 4850 4150
 Wire Wire Line
 	6750 5350 6750 4000
-$Comp
-L CONN_01X01 P4
-U 1 1 5612DC6B
-P 8200 3250
-F 0 "P4" H 8200 3350 50  0000 C CNN
-F 1 "CONN_01X01" V 8300 3250 50  0001 C CNN
-F 2 "Wire_Pads:SolderWirePad_single_0-8mmDrill" H 8200 3250 60  0001 C CNN
-F 3 "" H 8200 3250 60  0000 C CNN
-	1    8200 3250
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	7350 4900 7100 4900
 Wire Wire Line
@@ -406,21 +345,53 @@ Connection ~ 7100 4900
 Wire Wire Line
 	5350 4700 7350 4700
 Wire Wire Line
-	8150 4700 8150 4350
-Wire Wire Line
-	8150 4350 8000 4350
-Wire Wire Line
-	8000 4350 8000 3450
-Wire Wire Line
-	8150 4800 8200 4800
-Wire Wire Line
-	8200 4800 8200 3450
-Wire Wire Line
-	8150 4900 8400 4900
-Wire Wire Line
-	8400 4900 8400 3450
-Wire Wire Line
 	7300 4000 7300 4700
 Connection ~ 7300 4700
 Connection ~ 5700 3600
+$Comp
+L MAX1771 U1
+U 1 1 56AA3B18
+P 4850 4550
+F 0 "U1" H 5050 4300 60  0000 C CNN
+F 1 "MAX1771" H 4550 4300 60  0000 C CNN
+F 2 "Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm" H 4800 4300 60  0001 C CNN
+F 3 "" H 4800 4300 60  0000 C CNN
+	1    4850 4550
+	1    0    0    -1  
+$EndComp
+Connection ~ 5700 4550
+$Comp
+L IRF644PBF Q1
+U 1 1 56AA6CD7
+P 5600 4350
+F 0 "Q1" H 5800 4425 50  0000 L CNN
+F 1 "IRF644PBF" H 5800 4350 50  0000 L CNN
+F 2 "TO_SOT_Packages_THT:TO-220_Neutral123_Vertical" H 5800 4275 50  0001 L CIN
+F 3 "" H 5600 4350 50  0000 L CNN
+	1    5600 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X03 P4
+U 1 1 56AA736F
+P 8300 3250
+F 0 "P4" H 8300 3450 50  0000 C CNN
+F 1 "CONN_01X03" V 8400 3250 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03" H 8300 3250 50  0001 C CNN
+F 3 "" H 8300 3250 50  0000 C CNN
+	1    8300 3250
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8150 4900 8200 4900
+Wire Wire Line
+	8200 4900 8200 3450
+Wire Wire Line
+	8150 4700 8300 4700
+Wire Wire Line
+	8300 4700 8300 3450
+Wire Wire Line
+	8150 4800 8400 4800
+Wire Wire Line
+	8400 4800 8400 3450
 $EndSCHEMATC
